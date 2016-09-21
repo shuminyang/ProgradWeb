@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>MeanTeste</title>
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="vendor/css/bootstrap-theme.min.css" >
+    <link rel="stylesheet" href="vendor/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="vendor/css/meuCss.css" >
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-static-top navbar-light" >
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Mean Stack! </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#/clientes">Listar alunos</a></li>
+          <li><a href="#/adicionarCliente">Criar aluno</a></li>
+          <li><a href="#">Update aluno</a></li>
+          <li><a href="#">Deletar aluno</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container" ng-app="progradweb" >
+      <h1>ProgradWEB! </h1>
+      <div ng-view >
+      </div>
+    </div>
+
+    <!--VENDOR-->
+    <script src="vendor/js/jquery-3.1.0.js"></script>
+    <script src="vendor/js/angular.min.js" ></script>
+    <script src="vendor/js/angular-resource.min.js"></script>
+    <script src="vendor/js/angular-route.min.js" ></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+
+    <!--Projeto-->
+    <script src="projeto/app.js" ></script>
+    <script src="projeto/route.js" ></script>
+    <script src="projeto/controller/AlunoController.js" ></script>
+    <script src="projeto/service/AlunoService.js" ></script>
+
+  </body>
+
+</html>
