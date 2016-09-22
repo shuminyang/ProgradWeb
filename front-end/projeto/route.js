@@ -1,6 +1,9 @@
 "use strict";
 angular.module('progradweb').config(($routeProvider) => {
   $routeProvider
+    .when('/', {
+      redirectTo: '/alunos'
+    })
     .when('/alunos', {
       templateUrl: 'view/AlunosLista.html',
       controller: 'AlunoController'
