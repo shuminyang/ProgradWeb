@@ -1,0 +1,13 @@
+<form class="form-group col-sm-7 col-sm-offset-3" method="get">
+  <div class="row input-group">
+    <label for="nome" class="input-group-addon">Nome:</label>
+    <input type="text" ng-model="q.nome" id="nome" class="form-control">
+  </div>
+  <div class="row input-group">
+    <label for="ra" class="input-group-addon">RA:</label>
+    <input type="text" ng-model="q.ra" id="ra" class="form-control">
+  </div>
+  <div class="row" style="float: right">
+    <a href="#" class="btn btn-primary" ng-click=buscarAluno(q)>Buscar!</a>    
+  </div>
+</form>

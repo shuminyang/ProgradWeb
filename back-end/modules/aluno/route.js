@@ -41,6 +41,15 @@ router.get('/findnome/:nome', (req, res) => {
   });
 });
 
+router.get('/find/:nome/:ra', (req, res) => {
+  let query = {
+    nome: req.params.nome,
+    ra: req.params.ra};
+    Aluno.findOne(query, (err, data) => {
+      handleFunction(res, err, data);
+    });
+});
+
 router.put('/update/:ra', (req, res) => {
   let query = {ra: req.params.ra};
   let modif = req.body;

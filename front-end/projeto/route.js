@@ -1,12 +1,16 @@
 "use strict";
 angular.module('progradweb').config(($routeProvider) => {
   $routeProvider
-    .when('/clientes', {
+    .when('/alunos', {
       templateUrl: 'view/AlunosLista.html',
       controller: 'AlunoController'
     })
-    .when('/adicionarCliente', {
+    .when('/adicionarAluno', {
       templateUrl: 'view/AdicionarAluno.html',
+      controller: 'AlunoController'
+    })
+    .when('/modificarAluno', {
+      templateUrl:'view/ModificarAluno.html',
       controller: 'AlunoController'
     })
 });
