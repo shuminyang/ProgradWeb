@@ -16,7 +16,7 @@
 
 <section ng-show='hideAluno' class="row">
   <h2>Dados do aluno!</h2>
-  <form class="form-group col-sm-7 col-sm-offset-3" method="put" ng-model='aluno'>
+  <form class="form-group col-sm-7 col-sm-offset-3" method="put" ng-model='aluno' enctype="application/x-www-form-urlencoded">
     <div class="row input-group">
       <label for="nome" class="input-group-addon">Nome</label>
       <input type="text" ng-model='aluno.nome' id="name" value="aluno.nome" class="form-control">
@@ -40,6 +40,9 @@
     <div class="row input-group">
       <label for="nascimento" class="input-group-addon">Nascimento</label>
       <input type="text" ng-model='aluno.nascimento' id="nascimento" value="aluno.nascimento" class="form-control">
+    </div>
+    <div class="row" style="float: right">
+      <a href="#" class="btn btn-primary" ng-click=atualizarAluno(aluno)>Atualizar!</a>
     </div>
   </form>
 </section>

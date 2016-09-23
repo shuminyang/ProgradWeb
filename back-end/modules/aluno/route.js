@@ -53,8 +53,8 @@ router.get('/find/:nome/:ra', (req, res) => {
 router.put('/update/:ra', (req, res) => {
   let query = {ra: req.params.ra};
   let modif = req.body;
-  delete modif._id;
-  delete modif.ra;
+  delete modif._id;  
+  console.log(modif);
 
   Aluno.update(query, modif, (err, data) => {
     handleFunction(res, err, data);
