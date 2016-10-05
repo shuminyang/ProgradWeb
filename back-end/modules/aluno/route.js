@@ -24,29 +24,12 @@ router.post('/', function(req, res) {
   });
 });
 
-router.get('/findra/:ra', function(req, res) {
-  var query = {ra: req.params.ra};
-
-  Aluno.findOne(query, function(err, data) {
-    handleFunction(res, err, data);
-  });
-});
-
-router.get('/findnome/:nome', function(req, res) {
+router.get('/find/:nome', function(req, res) {
   var query = {nome: req.params.nome};
 
   Aluno.findOne(query, function(err, data) {
     handleFunction(res, err, data);
   });
-});
-
-router.get('/find/:nome/:ra', function(req, res) {
-  var query = {
-    nome: req.params.nome,
-    ra: req.params.ra};
-    Aluno.findOne(query, function(err, data) {
-      handleFunction(res, err, data);
-    });
 });
 
 router.put('/update/:ra', function(req, res) {

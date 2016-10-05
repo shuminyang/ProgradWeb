@@ -1,0 +1,23 @@
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>RA</th>
+      <th>NOME</th>
+      <th>ENDEREÇO</th>
+      <th>EMAIL</th>
+      <th>CPF</th>
+      <th>NASCIMENTO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat='aluno in listarAlunos'>
+      <td>{{aluno.ra}}</td>
+      <td>{{aluno.nome}}</td>
+      <td>{{aluno.endereco}}</td>
+      <td>{{aluno.email}}</td>
+      <td>{{aluno.cpf}}</td>
+      <td>{{aluno.nascimento}}</td>
+    </tr>
+  </tbody>
+</table>

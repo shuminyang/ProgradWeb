@@ -1,0 +1,17 @@
+{
+  "name": "progradweb-front",
+  "version": "1.0.0",
+  "description": "front-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shu",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "jquery": "^3.1.1"
+  }
+}

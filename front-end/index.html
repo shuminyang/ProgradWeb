@@ -4,10 +4,9 @@
   <head>
     <meta charset="utf-8">
     <title>MeanTeste</title>
-    <link rel="stylesheet" href="vendor/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="vendor/css/bootstrap-theme.min.css" >
-    <link rel="stylesheet" href="vendor/css/font-awesome.min.css" >
-    <link rel="stylesheet" href="vendor/css/meuCss.css" >
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" >
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/meuCss.css" > -->
   </head>
 
   <body>
@@ -24,24 +23,26 @@
         </ul>
       </div>
     </nav>
-    <div class="container" ng-app="progradweb" >
+    <div class="container" ng-app="progradWeb" >
       <h1>ProgradWEB! </h1>
       <div ng-view >
       </div>
     </div>
 
     <!--VENDOR-->
-    <script src="vendor/js/jquery-3.1.0.js"></script>
-    <script src="vendor/js/angular.min.js" ></script>
-    <script src="vendor/js/angular-resource.min.js"></script>
-    <script src="vendor/js/angular-route.min.js" ></script>
-    <script src="vendor/js/bootstrap.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js" ></script>
 
-    <!--Projeto-->
+    <!--App-->
     <script src="projeto/app.js" ></script>
     <script src="projeto/route.js" ></script>
-    <script src="projeto/controller/AlunoController.js" ></script>
-    <script src="projeto/service/AlunoService.js" ></script>
+    <!-- Controller -->
+    <script src="projeto/controller/alunoController.js" ></script>
+    <!-- Service -->
+    <script src="projeto/service/alunoService.js" ></script>
 
   </body>
 
