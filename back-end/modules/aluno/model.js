@@ -1,7 +1,6 @@
-"use strict";
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-const aluno = new mongoose.Schema({
+var aluno = new mongoose.Schema({
   nome: {type: String, required: true},
   ra: {type: String, required: true, unique: true},
   endereco: {type: String, default: ''},

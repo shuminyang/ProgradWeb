@@ -1,9 +1,8 @@
-"use strict";
-const express = require('express');
-const router = express.Router();
-const Aluno = require('./model');
+var express = require('express');
+var router = express.Router();
+var Aluno = require('./model');
 
-let handleFunction = function(res, err, data) {
+var handleFunction = function(res, err, data) {
   if (err) {
     res.status(400).json(err);
   } else {
@@ -11,62 +10,62 @@ let handleFunction = function(res, err, data) {
   }
 }
 
-router.get('/', (req, res) => {
+router.get('/', function(req, res) {
   Aluno.find({}, (err, data) => {
     handleFunction(res, err, data);
   });
 });
 
-router.post('/', (req, res) => {
-  let aluno = new Aluno(req.body);
+router.post('/', function(req, res) {
+  var aluno = new Aluno(req.body);
 
   aluno.save((err, data) => {
     handleFunction(res, err, data);
   });
 });
 
-router.get('/findra/:ra', (req, res) => {
-  let query = {ra: req.params.ra};
+router.get('/findra/:ra', function(req, res) {
+  var query = {ra: req.params.ra};
 
-  Aluno.findOne(query, (err, data) => {
+  Aluno.findOne(query, function(err, data) {
     handleFunction(res, err, data);
   });
 });
 
-router.get('/findnome/:nome', (req, res) => {
-  let query = {nome: req.params.nome};
+router.get('/findnome/:nome', function(req, res) {
+  var query = {nome: req.params.nome};
 
-  Aluno.findOne(query, (err, data) => {
+  Aluno.findOne(query, function(err, data) {
     handleFunction(res, err, data);
   });
 });
 
-router.get('/find/:nome/:ra', (req, res) => {
-  let query = {
+router.get('/find/:nome/:ra', function(req, res) {
+  var query = {
     nome: req.params.nome,
     ra: req.params.ra};
-    Aluno.findOne(query, (err, data) => {
+    Aluno.findOne(query, function(err, data) {
       handleFunction(res, err, data);
     });
 });
 
-router.put('/update/:ra', (req, res) => {
-  let query = {ra: req.params.ra};
-  let modif = req.body;
-  delete modif._id;  
+router.put('/update/:ra', function(req, res) {
+  var query = {ra: req.params.ra};
+  var modif = req.body;
+  delete modif._id;
   console.log(modif);
 
-  Aluno.update(query, modif, (err, data) => {
+  Aluno.update(query, modif, function(err, data) {
     handleFunction(res, err, data);
   });
 });
 
-router.delete('/delete/:ra', (req, res) => {
-  let query = {ra: req.params.ra};
+router.delete('/delete/:ra', function(req, res) {
+  var query = {ra: req.params.ra};
 
-  Aluno.remove(query, (err, data) => {
+  Aluno.remove(query, function(err, data) {
     handleFunction(res, err, data);
   })
-})
+});
 
 module.exports = router;

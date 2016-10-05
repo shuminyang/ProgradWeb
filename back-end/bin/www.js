@@ -1,8 +1,8 @@
-"use strict";
-const app = require('../app.js');
+
+var app = require('../app.js');
 
 app.set('port', 9090);
 
-const server = app.listen(app.get('port'), () => {
+var server = app.listen(app.get('port'), function() {
   console.log('Server listening on port: ' + server.address().port);
 });

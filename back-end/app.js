@@ -1,21 +1,19 @@
-"use strict";
-const express = require('express');
-const app = express();
-const db = require('./config/db.js');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+
+var express = require('express');
+var app = express();
+var db = require('./config/db.js');
+var bodyParser = require('body-parser');
+var cors = require('cors');
 
 app.disable('x-powered-by');
 app.use(cors());
 app.use(bodyParser.urlencoded({  extended: true }));
 app.use(bodyParser.json());
 
-let api = {};
+var api = {};
 
-api.clients = require('./modules/clients/route.js');
 api.alunos = require('./modules/aluno/route.js')
 
-app.use('/clients', api.clients);
 app.use('/aluno', api.alunos);
 
 //Teste inicial
