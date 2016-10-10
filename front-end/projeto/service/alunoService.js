@@ -4,12 +4,8 @@ angular.module('progradWeb').factory('alunoService', function($resource, $http) 
   };
 
   var adicionarAluno = function(aluno) {
-    $http.post('http://localhost:9090/aluno', aluno).then(function(data) {
-      return "Sucesso";
-    }).catch(function(error) {      
-      return "Error";
-    });
-  }
+    return $http.post('http://localhost:9090/aluno', aluno);
+  };
 
   return {
     listarAlunos : listarAlunos,
