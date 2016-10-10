@@ -7,8 +7,13 @@ angular.module('progradWeb').factory('alunoService', function($resource, $http) 
     return $http.post('http://localhost:9090/aluno', aluno);
   };
 
+  var deletarAluno = function(ra) {
+    return $http.delete('http://localhost:9090/aluno/delete/' + ra);
+  };
+
   return {
     listarAlunos : listarAlunos,
-    adicionarAluno: adicionarAluno
+    adicionarAluno: adicionarAluno,
+    deletarAluno: deletarAluno
   }
 })

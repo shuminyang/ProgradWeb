@@ -44,8 +44,7 @@ router.put('/update/:ra', function(req, res) {
 });
 
 router.delete('/delete/:ra', function(req, res) {
-  var query = {ra: req.params.ra};
-
+  var query = {ra: req.params.ra};  
   Aluno.remove(query, function(err, data) {
     handleFunction(res, err, data);
   })

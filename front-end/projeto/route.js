@@ -11,4 +11,8 @@ angular.module('progradWeb').config(function($routeProvider) {
       templateUrl: 'projeto/view/criarAluno.html',
       controller: 'alunoController'
     })
+    .when('/deletar', {
+      templateUrl: 'projeto/view/deletar.html',
+      controller: 'alunoController'
+    })
 });
