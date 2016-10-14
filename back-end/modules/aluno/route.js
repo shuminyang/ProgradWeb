@@ -27,6 +27,25 @@ router.post('/', function(req, res) {
 router.get('/find/:nome', function(req, res) {
   var query = {nome: req.params.nome};
 
+  Aluno.find(query, function(err, data) {
+    handleFunction(res, err, data);
+  });
+});
+
+router.get('/findRA/:ra', function(req, res) {
+  var query = {ra: req.params.ra};
+
+  Aluno.findOne(query, function(err, data) {
+    handleFunction(res, err, data);
+  });
+});
+
+router.get('/both/:ra/:nome', function(req, res) {
+  var query = {
+    ra: req.params.ra,
+    nome: req.params.nome
+  };
+
   Aluno.findOne(query, function(err, data) {
     handleFunction(res, err, data);
   });
@@ -44,7 +63,7 @@ router.put('/update/:ra', function(req, res) {
 });
 
 router.delete('/delete/:ra', function(req, res) {
-  var query = {ra: req.params.ra};  
+  var query = {ra: req.params.ra};
   Aluno.remove(query, function(err, data) {
     handleFunction(res, err, data);
   })

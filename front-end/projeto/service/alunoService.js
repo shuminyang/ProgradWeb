@@ -11,9 +11,22 @@ angular.module('progradWeb').factory('alunoService', function($resource, $http) 
     return $http.delete('http://localhost:9090/aluno/delete/' + ra);
   };
 
+  var procurarAluno = function(options) {
+
+    if (options.aluno && options.ra) {
+      return $http.get('http://localhost:9090/aluno/both/' + options.variavel);
+    } else if(options.ra) {
+      return $http.get('http://localhost:9090/aluno/findRA/' + options.variavel);
+    } else {
+      return $http.get('http://localhost:9090/aluno/find/' + options.variavel);
+    }
+
+  };
+
   return {
     listarAlunos : listarAlunos,
     adicionarAluno: adicionarAluno,
-    deletarAluno: deletarAluno
+    deletarAluno: deletarAluno,
+    procurarAluno: procurarAluno
   }
 })
