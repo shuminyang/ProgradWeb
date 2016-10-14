@@ -1,5 +1,7 @@
 angular.module('progradWeb').controller('alunoController', function(alunoService, $scope) {
 
+  $scope.alunoEncontrado = undefined;
+
   $scope.listarAlunos = alunoService.listarAlunos();
 
   $scope.adicionarAluno = function(aluno) {
@@ -29,6 +31,8 @@ angular.module('progradWeb').controller('alunoController', function(alunoService
   };
 
   $scope.encontrarAluno = function(info) {
+    console.log(info.ra);
+    console.log(info.nome);
     $scope.alunoEncontrado = undefined;
     var opcao = {
       "variavel": "",
@@ -36,7 +40,7 @@ angular.module('progradWeb').controller('alunoController', function(alunoService
       "ra": false
     };
     if (info.ra !== undefined || info.nome !== undefined) {
-      if (info.ra === undefined) {
+      if (info.ra === undefined || info.ra === '') {
         opcao.variavel = info.nome;
         opcao.aluno = true;
         alunoService.procurarAluno(opcao)
@@ -44,13 +48,15 @@ angular.module('progradWeb').controller('alunoController', function(alunoService
             if (data.data === null) {
               console.log("erro! Aluno não encontrado");
             } else {
-              $scope.alunoEncontrado = data.data;
+              console.log(data.data);
+              $scope.arrayAluno = data.data;
             }
           })
           .catch(function(error) {
             console.log("Erro pesado NOME!");
           });
-      } else if(info.nome === undefined) {
+      } else if(info.nome === undefined || info.nome === '') {
+        console.log('buscar ra');
         opcao.variavel = info.ra;
         opcao.ra = true;
         alunoService.procurarAluno(opcao)
@@ -84,6 +90,17 @@ angular.module('progradWeb').controller('alunoController', function(alunoService
     } else {
       console.log('error');
     }
+  };
+
+  $scope.atualizarAluno = function(aluno) {
+    alunoService.atualizarAluno(aluno)
+      .then(function(data) {
+        console.log(data);
+        console.log("aluno atualizado com sucesso!");
+      })
+      .catch(function(error) {
+        console.log("Erro pesado!");
+      })
   };
 
 });

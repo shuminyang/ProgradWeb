@@ -20,13 +20,17 @@ angular.module('progradWeb').factory('alunoService', function($resource, $http) 
     } else {
       return $http.get('http://localhost:9090/aluno/find/' + options.variavel);
     }
+  };
 
+  var atualizarAluno = function(aluno) {
+    return $http.put('http://localhost:9090/aluno/update/' + aluno.ra, aluno);
   };
 
   return {
     listarAlunos : listarAlunos,
     adicionarAluno: adicionarAluno,
     deletarAluno: deletarAluno,
-    procurarAluno: procurarAluno
+    procurarAluno: procurarAluno,
+    atualizarAluno: atualizarAluno
   }
 })

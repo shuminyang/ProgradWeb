@@ -17,8 +17,18 @@
     </div>
   </form>
 </div>
-<hr class="divider">
+
+<div ng-show="arrayAluno" class="row">
+  <hr class="divider" />
+
+    <div class="row" ng-repeat="aluno in arrayAluno" ng-model="alunoEncontrado">
+      <input type="radio" ng-model="alunoEncontrado" ng-value="aluno" name="aluno">{{aluno.nome}} _ {{aluno.ra}}
+    </div>
+
+</div>
+
 <div ng-show="alunoEncontrado">
+  <hr class="divider" />
   <form method="post" class="col-sm-8 col-sm-offset-2 form-horizontal">
     <div class="form-group">
       <label class="col-sm-2 control-label">Nome</label>
@@ -57,7 +67,7 @@
       </div>
     </div>
     <div class="form-group">
-      <input type="button" class="btn btn-primary" value="Adicionar" style="float: right;" ng-click='adicionarAluno(aluno)'>
+      <input type="button" class="btn btn-primary" value="Atualizar" style="float: right;" ng-click='atualizarAluno(alunoEncontrado)'>
     </div>
   </form>
 </div>
