@@ -1,5 +1,9 @@
 angular.module('progradWeb').config(function($routeProvider) {
   $routeProvider
+    .when('/login', {
+      templateUrl: 'projeto/view/login.html',
+      controller: 'loginController'
+    })
     .when('/', {
       redirectTo: '/alunos'
     })

@@ -12,9 +12,11 @@ app.use(bodyParser.json());
 
 var api = {};
 
-api.alunos = require('./modules/aluno/route.js')
+api.alunos = require('./modules/aluno/route.js');
+api.login = require('./modules/login/route.js');
 
 app.use('/aluno', api.alunos);
+app.use('/login', api.login);
 
 //Teste inicial
 // app.get('/', function(req, res) {
