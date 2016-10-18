@@ -25,8 +25,7 @@ angular.module('progradWeb').controller('loginController', function(loginService
     loginService.autenticarLogin(login)
       .then(function(data) {
         if (data.data !== null && data.data !== undefined) {
-          $rootScope.usuario = data.data;
-          console.log($rootScope.usuario);
+          $rootScope.usuario = data.data;          
         } else {
           $scope.mensagemErro = 'Login invalido!';
         }

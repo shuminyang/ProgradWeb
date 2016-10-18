@@ -2,10 +2,11 @@ angular.module('progradWeb').config(function($routeProvider) {
 
   var authResolve = {
     "auth": function($rootScope, $location) {
+      console.log($location.path());
       if ($rootScope.usuario === null || $rootScope.usuario === undefined) {
         $location.path('/login');
       } else {
-        return true;
+        $location.path($location.path());
       }
     }
   };
