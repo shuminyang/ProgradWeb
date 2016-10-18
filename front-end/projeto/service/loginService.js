@@ -1,7 +1,7 @@
-angular.module('progradWeb').factory('loginService', function($resource, $http) {
+angular.module('progradWeb').factory('loginService', function($http) {
 
-  var fazerLogin = function() {
-
+  var autenticarLogin = function(login) {
+    return $http.post('http://localhost:9090/login/auth', login);
   };
 
   var criarLogin = function(login) {
@@ -9,7 +9,7 @@ angular.module('progradWeb').factory('loginService', function($resource, $http) 
   };
 
   return {
-    fazerLogin: fazerLogin,
+    autenticarLogin: autenticarLogin,
     criarLogin: criarLogin
   }
 

@@ -10,18 +10,24 @@ var handleFunction = function(res, err, data) {
   }
 }
 
-router.get('/', function(req, res) {
-  var query = {login: req.params.login};
-  Login.findOne(query, function(err, data) {
-    handleFunction(res, err, data);
-  });
-});
-
 router.post('/', function(req, res) {
   var login = new Login(req.body);
   login.save(function(err, data) {
     handleFunction(res, err, data);
   });
 });
+
+router.post('/auth', function(req, res) {
+  var query = {
+              login: req.body.login,
+              senha: req.body.senha
+            };
+
+  Login.findOne(query, function(err, data) {
+    handleFunction(res, err, data);
+  });
+});
+
+
 
 module.exports = router;
